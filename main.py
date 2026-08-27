@@ -7,6 +7,9 @@ pygame.init()
 screen = pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Hello Pygame")
 
+# Set background color (red, blue, green)
+backgroundColor = (50, 150, 200)
+
 # Game loop
 running = True
 while running:
@@ -14,5 +17,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    screen.fill(backgroundColor)
+
+    #Update game window
+    pygame.display.flip()
 # Quit Pygame
 pygame.quit()
+
+
