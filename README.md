@@ -28,6 +28,7 @@ Sedan måste Pygame startas:
 **pygame.init()**
 
 Komplett grundstruktur
+
 ```
 import pygame
 
