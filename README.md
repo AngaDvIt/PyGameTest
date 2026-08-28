@@ -350,16 +350,17 @@ Det passar bra för saker som ska hända en gång.
 
 Exempel:
 
-SPACE → skjut
-ENTER → starta
-ESC → pausa
+**SPACE** → skjut  
+**ENTER** → starta  
+**ESC** → pausa  
 
 ## 12. Musfunktioner
 
-Hämta musens position:
+Hämta musens position:  
 
+```
 mouse_x, mouse_y = pygame.mouse.get_pos()
-
+```
 
 Exempel:
 ```
@@ -393,14 +394,14 @@ pygame.draw.rect(
 )
 
 ```
-Ordningen är:
+Ordningen är:  
 
-screen
-färg
-x
-y
-bredd
-höjd
+- screen
+- färg
+- x
+- y
+- bredd
+- höjd
 
 
 Exempel:
@@ -420,7 +421,7 @@ pygame.draw.circle(
 
 Här betyder:
 
-(400, 300) = centrum
+(400, 300) = centrum  
 50 = radie
 
 ## 15. Använda Rect
@@ -432,10 +433,10 @@ player = pygame.Rect(100, 100, 50, 50)
 
 Det betyder:
 
-x = 100
-y = 100
-bredd = 50
-höjd = 50
+x = 100  
+y = 100  
+bredd = 50  
+höjd = 50  
 
 
 Rita den:
@@ -473,12 +474,13 @@ if player.colliderect(enemy):
 
 Det används ofta för:
 
-Spelare mot fiende
-Spelare mot vägg
-Kulor mot fiender
-Spelare mot föremål
-Mynt som plockas upp
-17. FPS – spelhastighet
+- Spelare mot fiende
+- Spelare mot vägg
+- Kulor mot fiender
+- Spelare mot föremål
+- Mynt som plockas upp
+
+## 17. FPS – spelhastighet
 
 Använd en Clock:
 ```
@@ -496,7 +498,7 @@ Max 60 FPS
 
 
 Exempel:
-
+```
 while running:
 
     # EVENTS
@@ -508,6 +510,7 @@ while running:
     pygame.display.flip()
 
     clock.tick(60)
+```
 
 ## 18. Bilder – vanliga funktioner
 **Ladda bild**
@@ -615,15 +618,15 @@ while running:
 
 Tänk:
 
-EVENTS
-   ↓
-UPDATE
-   ↓
-DRAW
-   ↓
-DISPLAY
-   ↓
-LOOP
+EVENTS  
+   ↓  
+UPDATE  
+   ↓  
+DRAW  
+   ↓  
+DISPLAY  
+   ↓  
+LOOP  
 
 ## 22. Komplett exempel – rörlig spelare
 ```
@@ -837,19 +840,19 @@ GAME
 
 De fem viktigaste sakerna att förstå i Pygame är:
 
-1. EVENT  
+**1. EVENT**
   - Vad gör spelaren?  
 
-2. INPUT  
+**2. INPUT**  
   - Vilken tangent/mus används?  
 
-3. UPDATE  
+**3. UPDATE** 
  -  Hur förändras spelet?  
 
-4. DRAW  
+**4. DRAW**  
   - Vad ska ritas på skärmen?  
 
-5. GAME LOOP  
+**5. GAME LOOP**  
  -  Upprepa allt tills spelaren avslutar.  
 
 Minimal mall
