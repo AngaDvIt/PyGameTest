@@ -192,14 +192,14 @@ background = pygame.transform.scale(
 ## 7. Visa en bild på skärmen
 
 Ladda bilden:
-
+```
 player_image = pygame.image.load("player.png")
-
+```
 
 Visa bilden:
-
+```
 screen.blit(player_image, (100, 200))
-
+```
 
 Här betyder:
 
@@ -225,27 +225,27 @@ Alltså:
 #8. Flytta en bild
 
 Det viktigaste för att flytta ett objekt är att använda variabler för dess position.
-
+```
 player_x = 100
 player_y = 200
-
+```
 
 Visa bilden:
-
+```
 screen.blit(player_image, (player_x, player_y))
-
+```
 
 Flytta bilden:
-
+```
 player_x += 5
-
+```
 
 Nu flyttas bilden åt höger.
 
 ## 9. Flytta en bild med tangentbordet
 
 Ett enkelt exempel:
-
+```
 player_x = 100
 player_y = 200
 
@@ -275,33 +275,34 @@ while running:
 
     pygame.display.flip()
 
-Rörelserna
+#Rörelserna
 player_x -= 5
 
 
-Flyttar vänster.
+#Flyttar vänster.
 
 player_x += 5
 
 
-Flyttar höger.
+#Flyttar höger.
 
 player_y -= 5
 
 
-Flyttar upp.
+#Flyttar upp.
 
 player_y += 5
 
 
-Flyttar ner.
+#Flyttar ner.
+```
 
-#10. Tangentbord – knappar
+## 10. Tangentbord – knappar
 
 För att läsa av tangentbordet:
-
+```
 keys = pygame.key.get_pressed()
-
+```
 
 Sedan kan du kontrollera knappar.
 
@@ -332,9 +333,8 @@ pygame.K_TAB
 pygame.K_SHIFT
 pygame.K_CTRL
 
-
 Exempel:
-
+```
 if keys[pygame.K_SPACE]:
     print("Hoppa!")
 
@@ -344,21 +344,21 @@ Det finns skillnad mellan:
 
 pygame.key.get_pressed()
 
-
+```
 och:
-
+```
 pygame.KEYDOWN
-
+```
 
 KEYDOWN används när en tangent trycks ner.
-
+```
 for event in pygame.event.get():
 
     if event.type == pygame.KEYDOWN:
 
         if event.key == pygame.K_SPACE:
             print("Space trycktes!")
-
+```
 
 Det passar bra för saker som ska hända en gång.
 
@@ -368,7 +368,7 @@ SPACE → skjut
 ENTER → starta
 ESC → pausa
 
-#12. Musfunktioner
+## 12. Musfunktioner
 
 Hämta musens position:
 
@@ -376,34 +376,37 @@ mouse_x, mouse_y = pygame.mouse.get_pos()
 
 
 Exempel:
-
+```
 print(mouse_x, mouse_y)
-
+```
 
 Kontrollera musknappar:
-
+```
 mouse = pygame.mouse.get_pressed()
-
+```
 
 Vänster musknapp:
-
+```
 if mouse[0]:
     print("Vänsterklick")
-
+```
 
 Höger musknapp:
-
+```
 if mouse[2]:
     print("Högerklick")
+```
 
 ## 13. Rita rektanglar
+
+```
 pygame.draw.rect(
     screen,
     "red",
     (100, 100, 200, 100)
 )
 
-
+```
 Ordningen är:
 
 screen
@@ -415,17 +418,19 @@ höjd
 
 
 Exempel:
-
+```
 pygame.draw.rect(screen, "blue", (50, 50, 100, 100))
+```
 
 ## 14. Rita cirklar
+```
 pygame.draw.circle(
     screen,
     "red",
     (400, 300),
     50
 )
-
+```
 
 Här betyder:
 
@@ -435,9 +440,9 @@ Här betyder:
 ## 15. Använda Rect
 
 pygame.Rect är mycket användbart för spelobjekt.
-
+```
 player = pygame.Rect(100, 100, 50, 50)
-
+```
 
 Det betyder:
 
@@ -448,35 +453,37 @@ höjd = 50
 
 
 Rita den:
-
+```
 pygame.draw.rect(screen, "red", player)
-
+```
 
 Flytta:
-
+```
 player.x += 5
-
+```
 
 eller:
-
+```
 player.y += 5
+```
 
 ## 16. Kollisioner
 
 Kontrollera om två objekt krockar:
 
+```
 if player.colliderect(enemy):
-    print("Kollision!")
-
+  print("Kollision!")
+```
 
 Exempel:
-
+```
 player = pygame.Rect(100, 100, 50, 50)
 enemy = pygame.Rect(300, 100, 50, 50)
 
 if player.colliderect(enemy):
     print("Du blev träffad!")
-
+```
 
 Det används ofta för:
 
@@ -488,14 +495,14 @@ Mynt som plockas upp
 17. FPS – spelhastighet
 
 Använd en Clock:
-
+```
 clock = pygame.time.Clock()
-
+```
 
 I slutet av game loopen:
-
+```
 clock.tick(60)
-
+```
 
 Det betyder ungefär:
 
@@ -517,38 +524,45 @@ while running:
     clock.tick(60)
 
 ## 18. Bilder – vanliga funktioner
-Ladda bild
+**Ladda bild**
+```
 pygame.image.load("player.png")
-
-Visa bild
+```
+**Visa bild**
+```
 screen.blit(image, (x, y))
-
-Ändra storlek
+```
+**Ändra storlek**
+```
 pygame.transform.scale(image, (100, 100))
-
-Rotera
+```
+**Rotera**
+```
 pygame.transform.rotate(image, 90)
-
-Spegelvänd
+```
+**Spegelvänd**
+```
 pygame.transform.flip(image, True, False)
+```
+## 19. Text
 
-#19. Text
-
-Skapa ett font-objekt:
-
+**Skapa ett font-objekt:**
+```
 font = pygame.font.Font(None, 36)
+```
 
-
-Skapa text:
-
+**Skapa text:**
+```
 text = font.render("Hello World!", True, "white")
+```
 
-
-Visa texten:
-
+**Visa texten:**
+```
 screen.blit(text, (100, 100))
+```
 
 Exempel
+```
 font = pygame.font.Font(None, 50)
 
 text = font.render(
@@ -558,33 +572,38 @@ text = font.render(
 )
 
 screen.blit(text, (300, 250))
+```
 
-#20. Ljud
+## 20. Ljud
 
-Ladda ett ljudeffekt:
+**Ladda ett ljudeffekt:**
 
+```
 sound = pygame.mixer.Sound("jump.wav")
+```
 
-
-Spela ljudet:
-
+**Spela ljudet:**
+```
 sound.play()
-
-Musik
+```
+**Musik**
+```
 pygame.mixer.music.load("music.mp3")
 pygame.mixer.music.play(-1)
-
+```
 
 -1 betyder att musiken loopar.
 
-Stoppa musiken:
-
+**Stoppa musiken:**
+```
 pygame.mixer.music.stop()
+```
 
 ## 21. Game Loop – den viktigaste delen
 
 Nästan alla Pygame-spel bygger på en loop:
 
+```
 while running:
 
     # 1. EVENTS
@@ -606,7 +625,7 @@ while running:
 
     # 5. FPS
     clock.tick(60)
-
+```
 
 Tänk:
 
@@ -621,8 +640,9 @@ DISPLAY
 LOOP
 
 ## 22. Komplett exempel – rörlig spelare
+```
 import pygame
-
+ 
 pygame.init()
 
 ### Game window
@@ -692,46 +712,55 @@ while running:
     clock.tick(60)
 
 pygame.quit()
+```
 
 ## 23. Viktiga inbyggda Pygame-funktioner
-## Funktion	Vad den gör
-pygame.init()	Startar Pygame
-pygame.quit()	Avslutar Pygame
-pygame.display.set_mode()	Skapar spelfönster
-pygame.display.set_caption()	Ändrar fönstrets namn
-pygame.display.flip()	Uppdaterar skärmen
-pygame.event.get()	Hämtar events
-pygame.key.get_pressed()	Läser tangentbordet
-pygame.mouse.get_pos()	Hämtar musens position
-pygame.mouse.get_pressed()	Läser musknappar
-pygame.image.load()	Laddar bild
-screen.blit()	Visar bild
-screen.fill()	Fyller skärmen med färg
-pygame.draw.rect()	Ritar rektangel
-pygame.draw.circle()	Ritar cirkel
-pygame.draw.line()	Ritar linje
-pygame.Rect()	Skapar rektangel/objekt
-colliderect()	Kontrollerar kollision
-pygame.transform.scale()	Ändrar bildens storlek
-pygame.transform.rotate()	Roterar bild
-pygame.font.Font()	Skapar font
-font.render()	Skapar textbild
-pygame.mixer.Sound()	Laddar ljudeffekt
-sound.play()	Spelar ljud
-pygame.time.Clock()	Skapar spelklocka
-clock.tick()	Begränsar FPS
-pygame.time.get_ticks()	Hämtar tid sedan Pygame startade
-24. Viktiga Pygame Events
-Event	Funktion
-pygame.QUIT	Fönstret stängs
-pygame.KEYDOWN	Tangent trycks ner
-pygame.KEYUP	Tangent släpps
-pygame.MOUSEBUTTONDOWN	Musknapp trycks
-pygame.MOUSEBUTTONUP	Musknapp släpps
-pygame.MOUSEMOTION	Musen rör sig
+### Funktion	Vad den gör
+## Viktiga Pygame-funktioner
+
+| Funktion | Förklaring |
+|---|---|
+| `pygame.init()` | Startar Pygame |
+| `pygame.quit()` | Avslutar Pygame |
+| `pygame.display.set_mode()` | Skapar spelfönster |
+| `pygame.display.set_caption()` | Ändrar fönstrets namn |
+| `pygame.display.flip()` | Uppdaterar skärmen |
+| `pygame.event.get()` | Hämtar events |
+| `pygame.key.get_pressed()` | Läser tangentbordet |
+| `pygame.mouse.get_pos()` | Hämtar musens position |
+| `pygame.mouse.get_pressed()` | Läser musknappar |
+| `pygame.image.load()` | Laddar bild |
+| `screen.blit()` | Visar bild |
+| `screen.fill()` | Fyller skärmen med färg |
+| `pygame.draw.rect()` | Ritar rektangel |
+| `pygame.draw.circle()` | Ritar cirkel |
+| `pygame.draw.line()` | Ritar linje |
+| `pygame.Rect()` | Skapar rektangel/objekt |
+| `colliderect()` | Kontrollerar kollision |
+| `pygame.transform.scale()` | Ändrar bildens storlek |
+| `pygame.transform.rotate()` | Roterar bild |
+| `pygame.font.Font()` | Skapar font |
+| `font.render()` | Skapar textbild |
+| `pygame.mixer.Sound()` | Laddar ljudeffekt |
+| `sound.play()` | Spelar ljud |
+| `pygame.time.Clock()` | Skapar spelklocka |
+| `clock.tick()` | Begränsar FPS |
+| `pygame.time.get_ticks()` | Hämtar tid sedan Pygame startade |
+
+## Viktiga Pygame Events
+
+| Event | Funktion |
+|---|---|
+| `pygame.QUIT` | Fönstret stängs |
+| `pygame.KEYDOWN` | Tangent trycks ner |
+| `pygame.KEYUP` | Tangent släpps |
+| `pygame.MOUSEBUTTONDOWN` | Musknapp trycks |
+| `pygame.MOUSEBUTTONUP` | Musknapp släpps |
+| `pygame.MOUSEMOTION` | Musen rör sig |
+
 
 Exempel:
-
+```
 for event in pygame.event.get():
 
     if event.type == pygame.KEYDOWN:
@@ -741,44 +770,55 @@ for event in pygame.event.get():
 
     if event.type == pygame.MOUSEBUTTONDOWN:
         print("Mus klickad!")
+```
 
 ## 25. Viktiga Rect-funktioner
 
 Om du har:
 
+```
 player = pygame.Rect(100, 100, 50, 50)
+```
 
+## 📦 pygame.Rect
 
-kan du använda:
+Skapa ett objekt:
 
-player.x
-player.y
+    player = pygame.Rect(100, 100, 50, 50)
 
-player.width
-player.height
+### Vanliga funktioner
 
-player.left
-player.right
-player.top
-player.bottom
+- `player.x` → X-position
+- `player.y` → Y-position
+- `player.width` → Bredd
+- `player.height` → Höjd
+- `player.center` → Objektets mittpunkt
+- `player.move_ip(5, 0)` → Flyttar objektet
+- `player.colliderect(enemy)` → Kontrollerar kollision
+- `player.collidepoint(x, y)` → Kontrollerar om en punkt finns i objektet
 
-player.center
-player.centerx
-player.centery
+### Exempel
 
-Flytta
-player.move_ip(5, 0)
-
-Kollision
-player.colliderect(enemy)
-
-Kontrollera punkt
-player.collidepoint(mouse_x, mouse_y)
+Flytta spelaren:
+```
+    player.x += 5
+```
+Kontrollera kollision:
+```
+    if player.colliderect(enemy):
+        print("Kollision!")
+```
+Kontrollera musen:
+```
+    if player.collidepoint(mouse_x, mouse_y):
+        print("Musen är över spelaren!")
+```
 
 ## 26. Bra struktur för ett Pygame-spel
 
 Ett större spel kan delas upp så här:
 
+```
 GAME
 │
 ├── Initiering
@@ -805,27 +845,29 @@ GAME
 │   └── text
 │
 └── Game loop
+```
 
 ⭐ Kom ihåg
 
 De fem viktigaste sakerna att förstå i Pygame är:
 
-1. EVENT
-   Vad gör spelaren?
+1. EVENT  
+  - Vad gör spelaren?  
 
-2. INPUT
-   Vilken tangent/mus används?
+2. INPUT  
+  - Vilken tangent/mus används?  
 
-3. UPDATE
-   Hur förändras spelet?
+3. UPDATE  
+ -  Hur förändras spelet?  
 
-4. DRAW
-   Vad ska ritas på skärmen?
+4. DRAW  
+  - Vad ska ritas på skärmen?  
 
-5. GAME LOOP
-   Upprepa allt tills spelaren avslutar.
+5. GAME LOOP  
+ -  Upprepa allt tills spelaren avslutar.  
 
 Minimal mall
+```
 import pygame
 
 pygame.init()
@@ -854,6 +896,6 @@ while running:
     clock.tick(60)
 
 pygame.quit()
-
+```
 
 Detta är grunden som du kan bygga nästan vilket 2D-spel som helst på.
