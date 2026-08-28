@@ -209,7 +209,7 @@ Här betyder:
 
 
 **Koordinatsystemet i Pygame:**  
-![](Pictures/Bild1.png)
+![](Picture/Bild1.png)
 
 
 
