@@ -7,8 +7,10 @@ pygame.init()
 screen = pygame.display.set_mode((400, 300))
 pygame.display.set_caption("Hello Pygame")
 
+robot = pygame.image.load("robot.png")
 # Set background color (red, blue, green)
 backgroundColor = (50, 150, 200)
+
 
 # Game loop
 running = True
@@ -18,7 +20,7 @@ while running:
             running = False
 
     screen.fill(backgroundColor)
-
+    screen.blit(robot, (100, 50))
     #Update game window
     pygame.display.flip()
 # Quit Pygame
