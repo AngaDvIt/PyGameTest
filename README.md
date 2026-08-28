@@ -27,7 +27,7 @@ Sedan måste Pygame startas:
 
 **pygame.init()**
 
-Komplett grundstruktur
+Komplett grundstruktur  
 
 ```
 import pygame
@@ -49,6 +49,7 @@ while running:
     pygame.display.flip()
 
 pygame.quit()
+
 ```
 
 ### Förklaring
