@@ -208,22 +208,16 @@ Här betyder:
 200 = Y-position
 
 
-Koordinatsystemet i Pygame:
+**Koordinatsystemet i Pygame:**  
+![](Pictures/Bild1.png)
 
-(0,0) ───────────────────→ X
-  │
-  │
-  │
-  │
-  ↓
-  Y
 
 
 Alltså:
 
 (0, 0) = övre vänstra hörnet
 
-#8. Flytta en bild
+## 8. Flytta en bild
 
 Det viktigaste för att flytta ett objekt är att använda variabler för dess position.
 ```
@@ -307,32 +301,23 @@ keys = pygame.key.get_pressed()
 
 Sedan kan du kontrollera knappar.
 
-WASD
-if keys[pygame.K_w]:
-    player_y -= 5
+| Knapp | Pygame-kod | Funktion |
+|---|---|---|
+| W | pygame.K_w | Upp |
+| S | pygame.K_s | Ner |
+| A | pygame.K_a | Vänster |
+| D | pygame.K_d | Höger |
+| ↑ | pygame.K_UP | Upp |
+| ↓ | pygame.K_DOWN | Ner |
+| ← | pygame.K_LEFT | Vänster |
+| → | pygame.K_RIGHT | Höger |
+| Space | pygame.K_SPACE | Mellanslag |
+| Esc | pygame.K_ESCAPE | Escape |
+| Enter | pygame.K_RETURN | Enter |
+| Tab | pygame.K_TAB | Tab |
+| Shift | pygame.K_SHIFT | Shift |
+| Ctrl | pygame.K_CTRL | Ctrl |
 
-if keys[pygame.K_s]:
-    player_y += 5
-
-if keys[pygame.K_a]:
-    player_x -= 5
-
-if keys[pygame.K_d]:
-    player_x += 5
-
-Piltangenter
-pygame.K_UP
-pygame.K_DOWN
-pygame.K_LEFT
-pygame.K_RIGHT
-
-Andra vanliga knappar
-pygame.K_SPACE
-pygame.K_ESCAPE
-pygame.K_RETURN
-pygame.K_TAB
-pygame.K_SHIFT
-pygame.K_CTRL
 
 Exempel:
 ```
