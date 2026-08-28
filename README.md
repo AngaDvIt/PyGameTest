@@ -30,13 +30,13 @@ Sedan måste Pygame startas:
 Komplett grundstruktur
 import pygame
 
-pygame.init()
+**pygame.init()**
 
 **screen = pygame.display.set_mode((800, 600))**
 **pygame.display.set_caption("Mitt spel")**
 
 **running = True**
-
+```
 while running:
 
     for event in pygame.event.get():
@@ -47,6 +47,7 @@ while running:
     pygame.display.flip()
 
 pygame.quit()
+```
 
 ### Förklaring
 **Kod	Funktion**
